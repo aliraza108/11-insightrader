@@ -10,6 +10,17 @@ import { useToast } from "../components/ToastProvider.jsx";
 import { apiRequest } from "../utils/api.js";
 import { formatShortDate, impactColor } from "../utils/format.js";
 
+const normalizeStatus = (value) => (value ?? "").toString().toLowerCase();
+
+const extractJobId = (record) => {
+  if (!record) return "";
+  if (record.job_id) return record.job_id;
+  if (record.jobId) return record.jobId;
+  if (record.job?.id) return record.job.id;
+  if (record.id) return record.id;
+  return "";
+};
+
 const ScrapePage = () => {
   const [competitors, setCompetitors] = useState([]);
   const [selectedId, setSelectedId] = useState("");
@@ -24,6 +35,7 @@ const ScrapePage = () => {
   const [collapsed, setCollapsed] = useState({});
   const toast = useToast();
   const location = useLocation();
+  const jobId = useMemo(() => extractJobId(job), [job]);
 
   useEffect(() => {
     const preselected = location.state?.competitorId;
@@ -69,22 +81,22 @@ const ScrapePage = () => {
   }, [selectedId]);
 
   useEffect(() => {
-    if (jobStatus?.status === "completed") {
+    if (["completed", "done", "finished"].includes(normalizeStatus(jobStatus?.status))) {
       loadSnapshots(selectedId);
     }
   }, [jobStatus?.status, selectedId]);
 
   useEffect(() => {
-    if (!job?.job_id) return;
+    if (!jobId) return;
     let interval;
     let active = true;
 
     const poll = async () => {
       try {
-        const res = await apiRequest(`/scrape/status/${job.job_id}`);
+        const res = await apiRequest(`/scrape/status/${jobId}`);
         if (!active) return;
         setJobStatus(res);
-        if (res.status === "completed") {
+        if (["completed", "done", "finished"].includes(normalizeStatus(res.status))) {
           clearInterval(interval);
         }
       } catch (err) {
@@ -101,7 +113,7 @@ const ScrapePage = () => {
       active = false;
       clearInterval(interval);
     };
-  }, [job]);
+  }, [jobId]);
 
   const handleStart = async () => {
     if (!selectedId) {
