@@ -31,7 +31,7 @@ export const ApiStatus = () => {
         className={`h-2.5 w-2.5 rounded-full ${online ? "bg-emerald-400" : "bg-red-500"}`}
       />
       <div className="text-xs">
-        <p className="text-white">API Status</p>
+        <p className="text-radar-text">API Status</p>
         <p className="text-radar-muted">
           {online ? "Online" : "API Unreachable"}
         </p>

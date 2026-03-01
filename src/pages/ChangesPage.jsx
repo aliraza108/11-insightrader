@@ -171,14 +171,14 @@ const ChangesPage = () => {
                 <p className="text-xs text-radar-muted">{formatDate(change.detected_at)}</p>
               </div>
               <div className="mt-3 text-sm">
-                <p className="font-semibold text-white">
+                <p className="font-semibold text-radar-text">
                   {change.competitor_name || competitorMap[change.competitor_id] || "Competitor"}
                 </p>
-                <a href={change.url} target="_blank" rel="noreferrer" className="text-xs text-radar-muted hover:text-white">
+                <a href={change.url} target="_blank" rel="noreferrer" className="text-xs text-radar-muted hover:text-radar-text">
                   {change.url}
                 </a>
               </div>
-              <div className="mt-3 grid gap-2 text-sm text-slate-300">
+              <div className="mt-3 grid gap-2 text-sm text-slate-700">
                 <p>
                   <span className="text-radar-muted">Before:</span> {change.previous_value || "-"}
                 </p>
@@ -186,7 +186,7 @@ const ChangesPage = () => {
                   <span className="text-radar-muted">After:</span> {change.new_value || "-"}
                 </p>
               </div>
-              <p className="mt-3 text-sm text-slate-300">AI Summary: {change.summary}</p>
+              <p className="mt-3 text-sm text-slate-700">AI Summary: {change.summary}</p>
               <div className="mt-4 flex justify-end">
                 {change.is_reviewed === "true" || change.is_reviewed === true ? (
                   <span className="text-xs text-radar-muted">Reviewed</span>

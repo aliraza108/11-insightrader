@@ -183,14 +183,14 @@ const ScrapePage = () => {
               <div className="mt-4 space-y-4">
                 <div className="flex items-center justify-between">
                   <p className="text-sm text-radar-muted">Status: {jobStatus.status}</p>
-                  <p className="text-sm text-white">{jobStatus.progress}%</p>
+                  <p className="text-sm text-radar-text">{jobStatus.progress}%</p>
                 </div>
                 <ProgressBar value={jobStatus.progress} />
                 <div className="space-y-3">
                   {jobStatus.results?.map((result, idx) => (
-                    <div key={`${result.url}-${idx}`} className="rounded-xl border border-radar-border bg-slate-900/70 p-4">
+                    <div key={`${result.url}-${idx}`} className="rounded-xl border border-radar-border bg-white/80 p-4">
                       <div className="flex items-center justify-between">
-                        <a href={result.url} target="_blank" rel="noreferrer" className="text-sm hover:text-white">
+                        <a href={result.url} target="_blank" rel="noreferrer" className="text-sm hover:text-radar-text">
                           {result.url}
                         </a>
                         <Badge className={impactColor(result.changes_detected || 0)}>
@@ -202,7 +202,7 @@ const ScrapePage = () => {
                         <div className="mt-3">
                           <button
                             type="button"
-                            className="text-xs text-radar-primary hover:text-white"
+                            className="text-xs text-radar-primary hover:text-radar-text"
                             onClick={() =>
                               setCollapsed((prev) => ({
                                 ...prev,
@@ -213,7 +213,7 @@ const ScrapePage = () => {
                             {collapsed[result.url] ? "Hide" : "Show"} AI Insight
                           </button>
                           {collapsed[result.url] && (
-                            <p className="mt-2 text-sm text-slate-300">{result.ai_insight_preview}</p>
+                            <p className="mt-2 text-sm text-slate-700">{result.ai_insight_preview}</p>
                           )}
                         </div>
                       )}
@@ -244,7 +244,7 @@ const ScrapePage = () => {
 
             {!snapshotsLoading && snapshots.length > 0 && (
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs text-slate-300">
+                <table className="w-full text-left text-xs text-slate-700">
                   <thead className="text-[11px] uppercase text-radar-muted">
                     <tr>
                       <th className="pb-2">URL</th>
@@ -258,7 +258,7 @@ const ScrapePage = () => {
                     {snapshots.map((snap, idx) => (
                       <tr key={snap.snapshot_id || idx} className="border-t border-radar-border">
                         <td className="py-2">
-                          <a href={snap.url} target="_blank" rel="noreferrer" className="hover:text-white">
+                          <a href={snap.url} target="_blank" rel="noreferrer" className="hover:text-radar-text">
                             {snap.url}
                           </a>
                         </td>

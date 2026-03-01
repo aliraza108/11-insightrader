@@ -121,7 +121,7 @@ const ComparePage = () => {
                 <SkeletonCard />
               ) : pricing.metrics?.length ? (
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left text-xs text-slate-300">
+                  <table className="w-full text-left text-xs text-slate-700">
                     <thead className="text-[11px] uppercase text-radar-muted">
                       <tr>
                         <th className="pb-2">Metric</th>
@@ -135,7 +135,7 @@ const ComparePage = () => {
                     <tbody>
                       {(pricing.metrics || []).map((metric) => (
                         <tr key={metric.label} className="border-t border-radar-border">
-                          <td className="py-2 font-semibold text-white">{metric.label}</td>
+                          <td className="py-2 font-semibold text-radar-text">{metric.label}</td>
                           {metric.values.map((value, idx) => (
                             <td key={`${metric.label}-${idx}`} className="py-2">
                               {value}
@@ -158,7 +158,7 @@ const ComparePage = () => {
                 <SkeletonCard />
               ) : features.matrix?.length ? (
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left text-xs text-slate-300">
+                  <table className="w-full text-left text-xs text-slate-700">
                     <thead className="text-[11px] uppercase text-radar-muted">
                       <tr>
                         <th className="pb-2">Feature</th>
@@ -172,7 +172,7 @@ const ComparePage = () => {
                     <tbody>
                       {(features.matrix || []).map((row) => (
                         <tr key={row.feature} className="border-t border-radar-border">
-                          <td className="py-2 font-semibold text-white">{row.feature}</td>
+                          <td className="py-2 font-semibold text-radar-text">{row.feature}</td>
                           {row.values.map((value, idx) => (
                             <td key={`${row.feature}-${idx}`} className="py-2">
                               {value ? "Yes" : "No"}

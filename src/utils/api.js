@@ -1,4 +1,10 @@
-﻿export const API_BASE = "https://11-insightradar-api.vercel.app";
+const RAW_API_BASE = import.meta.env.VITE_API_BASE || "https://11-insightradar-api.vercel.app";
+export const API_BASE = RAW_API_BASE.replace(/\/+$/, "");
+
+const buildUrl = (path) => {
+  if (!path) return API_BASE;
+  return `${API_BASE}${path.startsWith("/") ? path : `/${path}`}`;
+};
 
 export const defaultHeaders = {
   "Content-Type": "application/json",
@@ -6,7 +12,7 @@ export const defaultHeaders = {
 };
 
 export const apiRequest = async (path, options = {}) => {
-  const response = await fetch(`${API_BASE}${path}`, {
+  const response = await fetch(buildUrl(path), {
     headers: defaultHeaders,
     ...options
   });

@@ -2,7 +2,7 @@
   <button
     type="button"
     className={`relative h-7 w-14 rounded-full border border-radar-border transition ${
-      enabled ? "bg-radar-primary/80" : "bg-slate-700"
+      enabled ? "bg-radar-primary/80" : "bg-stone-300"
     }`}
     onClick={() => onChange(!enabled)}
   >

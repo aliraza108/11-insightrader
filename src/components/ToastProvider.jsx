@@ -40,10 +40,10 @@ export const ToastProvider = ({ children }) => {
             key={toast.id}
             className={`radar-card px-4 py-3 text-sm shadow-glow border border-transparent ${
               toast.type === "success"
-                ? "bg-emerald-500/10 text-emerald-200 border-emerald-500/40"
+                ? "bg-emerald-100 text-emerald-900 border-emerald-200"
                 : toast.type === "error"
-                ? "bg-red-500/10 text-red-200 border-red-500/40"
-                : "bg-blue-500/10 text-blue-200 border-blue-500/40"
+                ? "bg-red-100 text-red-900 border-red-200"
+                : "bg-sky-100 text-sky-900 border-sky-200"
             }`}
           >
             <div className="flex items-start justify-between gap-3">
@@ -52,7 +52,7 @@ export const ToastProvider = ({ children }) => {
                 <button
                   type="button"
                   onClick={() => removeToast(toast.id)}
-                  className="text-xs uppercase tracking-wide text-white/60 hover:text-white"
+                  className="text-xs uppercase tracking-wide text-radar-muted hover:text-radar-text"
                 >
                   Dismiss
                 </button>

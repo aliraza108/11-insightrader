@@ -14,7 +14,7 @@
       >
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-lg font-semibold">{title}</h3>
-          <button type="button" onClick={onClose} className="text-radar-muted hover:text-white">
+          <button type="button" onClick={onClose} className="text-radar-muted hover:text-radar-text">
             Close
           </button>
         </div>

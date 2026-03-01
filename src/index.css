@@ -3,24 +3,26 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
-  scrollbar-color: #1f2937 transparent;
+  scrollbar-color: #d7c9b8 transparent;
   scrollbar-width: thin;
 }
 
 body {
-  font-family: "Inter", ui-sans-serif, system-ui;
-  background: radial-gradient(circle at top, rgba(99, 102, 241, 0.15), transparent 45%),
-    radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.12), transparent 35%),
-    #0a0e1a;
+  font-family: "Space Grotesk", ui-sans-serif, system-ui;
+  background:
+    radial-gradient(circle at 10% 5%, rgba(15, 118, 110, 0.18), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(234, 88, 12, 0.14), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(14, 116, 144, 0.12), transparent 42%),
+    #f6f1e8;
   min-height: 100vh;
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
+  background: rgba(15, 118, 110, 0.2);
 }
 
 .container-shell {
@@ -30,7 +32,7 @@ body {
 }
 
 .radar-card {
-  @apply border border-radar-border rounded-2xl bg-radar-surface/90 shadow-soft;
+  @apply border border-radar-border rounded-2xl bg-radar-surface/95 shadow-soft;
 }
 
 .radar-button {
@@ -38,15 +40,15 @@ body {
 }
 
 .radar-button-primary {
-  @apply radar-button bg-radar-primary text-white hover:brightness-110 active:scale-[0.98];
+  @apply radar-button bg-radar-primary text-white hover:brightness-105 active:scale-[0.98];
 }
 
 .radar-button-ghost {
-  @apply radar-button border border-radar-border text-radar-text/90 hover:bg-white/5;
+  @apply radar-button border border-radar-border text-radar-text/90 hover:bg-black/5;
 }
 
 .radar-input {
-  @apply w-full rounded-xl border border-radar-border bg-transparent px-3 py-2 text-sm text-radar-text placeholder:text-radar-muted focus:border-radar-primary focus:outline-none;
+  @apply w-full rounded-xl border border-radar-border bg-white/70 px-3 py-2 text-sm text-radar-text placeholder:text-radar-muted focus:border-radar-primary focus:outline-none;
 }
 
 .radar-badge {
@@ -54,39 +56,39 @@ body {
 }
 
 .skeleton {
-  @apply rounded-xl bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 animate-shimmer;
+  @apply rounded-xl bg-gradient-to-r from-stone-200 via-stone-100 to-stone-200 animate-shimmer;
   background-size: 700px 100%;
 }
 
 .glass {
   backdrop-filter: blur(14px);
-  background: rgba(17, 24, 39, 0.8);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .sidebar-link {
-  @apply flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-radar-muted transition hover:bg-white/5 hover:text-white;
+  @apply flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-radar-muted transition hover:bg-black/5 hover:text-radar-text;
 }
 
 .sidebar-link.active {
-  @apply bg-white/10 text-white shadow-glow;
+  @apply bg-black/10 text-radar-text shadow-glow;
 }
 
 .markdown-content h1,
 .markdown-content h2,
 .markdown-content h3 {
-  @apply text-white font-semibold mt-4 mb-2;
+  @apply text-radar-text font-semibold mt-4 mb-2;
 }
 
 .markdown-content p {
-  @apply text-sm text-slate-300 leading-relaxed;
+  @apply text-sm text-slate-700 leading-relaxed;
 }
 
 .markdown-content ul {
-  @apply list-disc pl-6 text-sm text-slate-300;
+  @apply list-disc pl-6 text-sm text-slate-700;
 }
 
 .markdown-content ol {
-  @apply list-decimal pl-6 text-sm text-slate-300;
+  @apply list-decimal pl-6 text-sm text-slate-700;
 }
 
 .printable {

@@ -4,23 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        "radar-bg": "#0A0E1A",
-        "radar-surface": "#111827",
-        "radar-border": "#1F2937",
-        "radar-primary": "#6366F1",
-        "radar-accent": "#10B981",
-        "radar-warning": "#F59E0B",
-        "radar-danger": "#EF4444",
-        "radar-text": "#F9FAFB",
+        "radar-bg": "#F6F1E8",
+        "radar-surface": "#FFFFFF",
+        "radar-border": "#E3D8C8",
+        "radar-primary": "#0F766E",
+        "radar-accent": "#A16207",
+        "radar-warning": "#B45309",
+        "radar-danger": "#B91C1C",
+        "radar-text": "#1F2937",
         "radar-muted": "#6B7280"
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"],
-        mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular"]
+        sans: ["Space Grotesk", "ui-sans-serif", "system-ui"],
+        mono: ["DM Mono", "ui-monospace", "SFMono-Regular"]
       },
       boxShadow: {
-        soft: "0 10px 30px rgba(2,6,23,0.35)",
-        glow: "0 0 0 1px rgba(99,102,241,0.35), 0 20px 60px rgba(15,23,42,0.45)"
+        soft: "0 12px 30px rgba(25, 10, 2, 0.12)",
+        glow: "0 0 0 1px rgba(15,118,110,0.2), 0 18px 45px rgba(16,24,40,0.14)"
       },
       keyframes: {
         floaty: {

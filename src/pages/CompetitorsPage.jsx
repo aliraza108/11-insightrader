@@ -177,14 +177,14 @@ const CompetitorsPage = () => {
                   </div>
                 </div>
 
-                <div className="mt-4 space-y-2 text-sm text-slate-300">
+                <div className="mt-4 space-y-2 text-sm text-slate-700">
                   <p>Frequency: {comp.monitoring_frequency}</p>
                   <div>
                     <p className="text-xs uppercase tracking-wide text-radar-muted">Tracking URLs</p>
-                    <ul className="mt-2 space-y-1 text-xs text-slate-400">
+                    <ul className="mt-2 space-y-1 text-xs text-slate-600">
                       {comp.tracking_urls?.map((url) => (
                         <li key={url}>
-                          <a href={url} target="_blank" rel="noreferrer" className="hover:text-white">
+                          <a href={url} target="_blank" rel="noreferrer" className="hover:text-radar-text">
                             {url}
                           </a>
                         </li>
@@ -196,7 +196,7 @@ const CompetitorsPage = () => {
                     <div className="mt-2 flex flex-wrap gap-2">
                       {comp.keywords?.length ? (
                         comp.keywords.map((keyword) => (
-                          <span key={keyword} className="radar-badge bg-white/10 text-slate-200">
+                          <span key={keyword} className="radar-badge bg-black/5 text-slate-700">
                             {keyword}
                           </span>
                         ))
@@ -296,7 +296,7 @@ const CompetitorsPage = () => {
                 <button
                   type="button"
                   key={keyword}
-                  className="radar-badge bg-white/10 text-slate-200"
+                  className="radar-badge bg-black/5 text-slate-700"
                   onClick={() =>
                     setForm((prev) => ({
                       ...prev,

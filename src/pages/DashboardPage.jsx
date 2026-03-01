@@ -13,7 +13,7 @@ const StatCard = ({ label, value }) => {
   return (
     <div className="radar-card p-5">
       <p className="text-xs uppercase tracking-wide text-radar-muted">{label}</p>
-      <p className="mt-3 text-3xl font-semibold text-white">{count}</p>
+      <p className="mt-3 text-3xl font-semibold text-radar-text">{count}</p>
     </div>
   );
 };
@@ -68,7 +68,7 @@ const DashboardPage = () => {
                 <h3 className="text-lg font-semibold">Recent High-Impact Changes</h3>
                 <button
                   type="button"
-                  className="text-xs text-radar-primary hover:text-white"
+                  className="text-xs text-radar-primary hover:text-radar-text"
                   onClick={() => navigate("/changes")}
                 >
                   View All
@@ -81,7 +81,7 @@ const DashboardPage = () => {
                       key={`${item.change_type}-${idx}`}
                       type="button"
                       onClick={() => navigate("/changes")}
-                      className="flex w-full items-center justify-between rounded-xl border border-radar-border bg-slate-900/60 px-4 py-3 text-left hover:border-radar-primary/60"
+                      className="flex w-full items-center justify-between rounded-xl border border-radar-border bg-white/70 px-4 py-3 text-left hover:border-radar-primary/60"
                     >
                       <div>
                         <p className="text-sm font-semibold capitalize">{item.change_type}</p>
@@ -106,7 +106,7 @@ const DashboardPage = () => {
                   data.competitor_list.map((comp) => (
                     <div
                       key={comp.id}
-                      className="flex items-center justify-between rounded-xl border border-radar-border bg-slate-900/60 px-4 py-3"
+                      className="flex items-center justify-between rounded-xl border border-radar-border bg-white/70 px-4 py-3"
                     >
                       <div>
                         <p className="text-sm font-semibold">{comp.name}</p>

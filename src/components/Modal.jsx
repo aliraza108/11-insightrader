@@ -6,11 +6,11 @@
       <div className="radar-card w-full max-w-lg p-6">
         <div className="mb-4 flex items-center justify-between">
           <h3 className="text-lg font-semibold">{title}</h3>
-          <button type="button" onClick={onClose} className="text-radar-muted hover:text-white">
+          <button type="button" onClick={onClose} className="text-radar-muted hover:text-radar-text">
             Close
           </button>
         </div>
-        <div className="text-sm text-slate-300">{children}</div>
+        <div className="text-sm text-slate-700">{children}</div>
         <div className="mt-6 flex justify-end gap-3">{actions}</div>
       </div>
     </div>

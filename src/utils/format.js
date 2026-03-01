@@ -26,32 +26,32 @@ export const formatNumber = (value) => {
 };
 
 export const impactColor = (score) => {
-  if (score >= 8) return "bg-radar-danger/20 text-radar-danger";
-  if (score >= 5) return "bg-radar-warning/20 text-radar-warning";
-  return "bg-radar-accent/20 text-radar-accent";
+  if (score >= 8) return "bg-radar-danger/15 text-radar-danger";
+  if (score >= 5) return "bg-radar-warning/15 text-radar-warning";
+  return "bg-radar-accent/15 text-radar-accent";
 };
 
 export const impactAlertColor = (score) => {
-  if (score >= 9) return "bg-radar-danger/20 text-radar-danger";
-  if (score >= 7) return "bg-radar-warning/20 text-radar-warning";
-  if (score >= 5) return "bg-yellow-500/20 text-yellow-300";
-  return "bg-slate-500/20 text-slate-300";
+  if (score >= 9) return "bg-radar-danger/15 text-radar-danger";
+  if (score >= 7) return "bg-radar-warning/15 text-radar-warning";
+  if (score >= 5) return "bg-amber-200 text-amber-900";
+  return "bg-slate-200 text-slate-700";
 };
 
 export const changeTypeColor = (type) => {
   switch (type) {
     case "pricing":
-      return "bg-radar-danger/20 text-radar-danger";
+      return "bg-radar-danger/15 text-radar-danger";
     case "features":
-      return "bg-blue-500/20 text-blue-300";
+      return "bg-radar-primary/15 text-radar-primary";
     case "messaging":
-      return "bg-purple-500/20 text-purple-300";
+      return "bg-amber-200 text-amber-900";
     case "content":
-      return "bg-slate-500/20 text-slate-300";
+      return "bg-slate-200 text-slate-700";
     case "structure":
-      return "bg-amber-500/20 text-amber-300";
+      return "bg-radar-warning/15 text-radar-warning";
     default:
-      return "bg-slate-600/20 text-slate-300";
+      return "bg-slate-200 text-slate-700";
   }
 };
 
