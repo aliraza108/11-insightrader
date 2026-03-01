@@ -1,0 +1,106 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scrollbar-color: #1f2937 transparent;
+  scrollbar-width: thin;
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui;
+  background: radial-gradient(circle at top, rgba(99, 102, 241, 0.15), transparent 45%),
+    radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.12), transparent 35%),
+    #0a0e1a;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+}
+
+.container-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.radar-card {
+  @apply border border-radar-border rounded-2xl bg-radar-surface/90 shadow-soft;
+}
+
+.radar-button {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition;
+}
+
+.radar-button-primary {
+  @apply radar-button bg-radar-primary text-white hover:brightness-110 active:scale-[0.98];
+}
+
+.radar-button-ghost {
+  @apply radar-button border border-radar-border text-radar-text/90 hover:bg-white/5;
+}
+
+.radar-input {
+  @apply w-full rounded-xl border border-radar-border bg-transparent px-3 py-2 text-sm text-radar-text placeholder:text-radar-muted focus:border-radar-primary focus:outline-none;
+}
+
+.radar-badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold;
+}
+
+.skeleton {
+  @apply rounded-xl bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 animate-shimmer;
+  background-size: 700px 100%;
+}
+
+.glass {
+  backdrop-filter: blur(14px);
+  background: rgba(17, 24, 39, 0.8);
+}
+
+.sidebar-link {
+  @apply flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-radar-muted transition hover:bg-white/5 hover:text-white;
+}
+
+.sidebar-link.active {
+  @apply bg-white/10 text-white shadow-glow;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  @apply text-white font-semibold mt-4 mb-2;
+}
+
+.markdown-content p {
+  @apply text-sm text-slate-300 leading-relaxed;
+}
+
+.markdown-content ul {
+  @apply list-disc pl-6 text-sm text-slate-300;
+}
+
+.markdown-content ol {
+  @apply list-decimal pl-6 text-sm text-slate-300;
+}
+
+.printable {
+  color: #0f172a;
+  background: #ffffff;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+    color: #0f172a;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+}
